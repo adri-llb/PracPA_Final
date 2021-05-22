@@ -13,12 +13,14 @@ import javax.swing.JTextField;
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
 public class SalasJFrame extends javax.swing.JFrame {
-
+    private EstadoSalas estado_salas;
     /**
      * Creates new form SalasJFrame
      */
-    public SalasJFrame() {
+    public SalasJFrame(EstadoSalas estado_salas) {
         initComponents();
+        this.estado_salas = estado_salas;
+        
         
     }
    
@@ -336,12 +338,13 @@ public class SalasJFrame extends javax.swing.JFrame {
             jPanelDESCANSOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelDESCANSOLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelSDescanso)
-                .addGap(62, 62, 62))
-            .addGroup(jPanelDESCANSOLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jTextFieldDESCANSO, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGroup(jPanelDESCANSOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelDESCANSOLayout.createSequentialGroup()
+                        .addComponent(jLabelSDescanso)
+                        .addGap(62, 62, 62))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelDESCANSOLayout.createSequentialGroup()
+                        .addComponent(jTextFieldDESCANSO, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         jPanelDESCANSOLayout.setVerticalGroup(
             jPanelDESCANSOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

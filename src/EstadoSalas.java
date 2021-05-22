@@ -455,10 +455,10 @@ public class EstadoSalas {
        }else Thread.sleep(paciente.getT_espera_observacion());
    }
    public void tratarReaccion(Sanitario sanitario) throws IOException, InterruptedException{
-       /*miramos si hay pacientes en reacion_pacientes; si hay sacamos al primero ,hacemos sleep()  y hacemos signal de esperar_sanitario_reaccion .Si no, nada*/
-       if(!reaccion_pacientes.isEmpty()){
-           c_reacciones.lock();
-           try {                   
+       /*miramos si hay pacientes en reacion_pacientes; si hay sacamos al primero ,hacemos sleep()  y hacemos signal de esperar_sanitario_reaccion .Si no, nada*/       
+           c_reacciones.lock();           
+           try {            
+                   if(!reaccion_pacientes.isEmpty()){
                    Paciente paciente = reaccion_pacientes.get(0);                   
                    ImprimirPuestoObsEntrada(paciente.getPuesto_observacion(), sanitario.getNombre(), false);
                    String mensaje = "El sanitario "+sanitario.getNombre()+" trata al paciente "+paciente.getNombre()+" al que le había dado reacción en el puesto "+(paciente.getPuesto_observacion()+1);
@@ -468,10 +468,8 @@ public class EstadoSalas {
                    ImprimirPuestoObsSalida(paciente.getPuesto_observacion());
                    reaccion_pacientes.remove(paciente);
                    esperar_sanitario_reaccion.signal();
-               
-           }finally{c_reacciones.unlock();}
-           
-       }
+                   }
+           }finally{c_reacciones.unlock();}         
    }
    
    public void sacarPacienteObs(Paciente paciente) throws IOException{

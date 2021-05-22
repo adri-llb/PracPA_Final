@@ -62,7 +62,7 @@ public class Hospital extends Thread{
         aux2.start();
         
         //creamos los pacientes
-        for (int i = 0; i < 2000; i++) {
+        for (int i = 0; i < num_pacientes; i++) {
             try{
                 Thread.sleep(t_min_llegada_pacientes+(int)(Math.random()*(t_max_llegada_pacientes-t_min_llegada_pacientes)));//creamos pacientes en intervalo 1-3 segundos
             }catch(InterruptedException ie){}

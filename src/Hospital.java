@@ -44,6 +44,8 @@ public class Hospital extends Thread{
     
     public void run(){
         this.interfaz.setVisible(true);
+        this.interfaz.setLocationRelativeTo(null);
+        
         //creamos los sanitatios
         for(int i=1;i<11;i++){
             String id_s;

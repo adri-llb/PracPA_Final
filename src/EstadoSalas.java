@@ -43,6 +43,7 @@ public class EstadoSalas {
     private int cap_sala_observacion;
     private int vacunas;
     private int porcentaje_reaccion;
+    private int porcentaje_sin_cita;
     private File log;//creamos archivo de texto
     private FileWriter fw;
     private BufferedWriter bw; 
@@ -89,6 +90,7 @@ public class EstadoSalas {
         this.vacunacion_pacientes = new Paciente[cap_sala_vacunas];
         this.vacunacion_sanitarios= new Sanitario[cap_sala_vacunas];
         this.porcentaje_reaccion = 5;
+        this.porcentaje_sin_cita = 1;
         this.log = new File(".\\log.txt");
         if(!log.exists()) log.createNewFile();
         this.fw = new FileWriter(log);
@@ -134,7 +136,7 @@ public class EstadoSalas {
     public void imprimirColaRecepcion(JTextArea cola, ArrayList<Paciente> pacientes){
         String contenido = "";
         for(int i = 0;i<pacientes.size();i++){
-            if(i %12 == 0) contenido += '\n';
+            if(i %12 == 0) contenido += '\n'; //12 son los pacientes que caben en una línea del JTextField
             String nombre_pac = pacientes.get(i).getNombre();
             contenido += nombre_pac;
             if(i<pacientes.size()-1) contenido += ", ";
@@ -213,13 +215,9 @@ public class EstadoSalas {
         }finally{c_recepcion.unlock();} 
     }
     
-    public void comprobarPaciente() throws InterruptedException, IOException{
-        
+    public void comprobarPaciente() throws InterruptedException, IOException{        
         Boolean cita = false;
         Paciente paciente = null;
-        //int index=0;
-     
-      //  while(!cita){
             c_recepcion.lock();
             while(recepcion.isEmpty()) vacio_recepcion.await();
             try{
@@ -227,7 +225,7 @@ public class EstadoSalas {
                 interfaz.getjTextFieldPacienteRecepcion().setText(paciente.getNombre());
                 Thread.sleep(500);
                 paciente.setComprobado(true);
-                if(paciente.getProb_cita()>1){
+                if(paciente.getProb_cita()>porcentaje_sin_cita){
                     cita = true;
                     String mensaje = "El paciente "+paciente.getNombre()+" tiene cita. ";
                     System.out.println(mensaje);
@@ -301,7 +299,6 @@ public class EstadoSalas {
       int random = (int)(Math.random()*8);
        for (int i = random; i < vacunacion_pacientes.length+random; i++) {
                int num = i%9;
-               System.out.println("NUM "+num);
                 if(vacunacion_pacientes[num] == null && vacunacion_sanitarios[num] != null){
                 puesto = num;
                 break;

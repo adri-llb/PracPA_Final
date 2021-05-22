@@ -38,7 +38,7 @@ public class Sanitario extends Thread{
         this.t_max_descanso = 8*1000;
         this.t_min_problema = 2*1000;
         this.t_max_problema = 5*1000; 
-        this.vacunados_descanso = 5;//establecer a 15
+        this.vacunados_descanso = 15;
         this.vacunados=0;
     }
 
@@ -80,6 +80,7 @@ public class Sanitario extends Thread{
     
     public void run(){       
         try {
+            //IMPRESION SANITARIOS CUANDO SE CAMBIAN?
             estado_salas.cambiarse(id, t_min_cambiarse, t_max_cambiarse);
             int puesto = estado_salas.entrarVacunacionSanitario(this);
             while(true){

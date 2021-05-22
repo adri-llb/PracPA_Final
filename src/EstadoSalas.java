@@ -119,7 +119,15 @@ public class EstadoSalas {
     public int getVacunas() {
         return vacunas;
     }
-    
+        //METODO PARA ESCRIBIR EN EL LOG (log.txt)
+    public void escribirLog(String entrada) throws IOException{
+        LocalDateTime tiempo = LocalDateTime.now();
+        bw.write(tiempo.getHour() + ":"+ tiempo.getMinute() +":"+tiempo.getSecond() + " -> "+entrada+"\n"); 
+    }
+    public void cerrarLog() throws IOException{//llamar cando finalicemos la ejecucion
+        bw.close();
+    }
+    //--------------------------------------------------------------------------------------------------------------------------------
     
     //FUNCIONES PARA LA INTERFAZ
     //actualizar la cola de recepcion
@@ -251,16 +259,6 @@ public class EstadoSalas {
         
    }
     //----------------------------------------------------------------------------------------------------------------------------------
-    //METODO PARA ESCRIBIR EN EL LOG (log.txt)
-    public void escribirLog(String entrada) throws IOException{
-        LocalDateTime tiempo = LocalDateTime.now();
-        bw.write(tiempo.getHour() + ":"+ tiempo.getMinute() +":"+tiempo.getSecond() + " -> "+entrada+"\n");
-        
-    }
-    public void cerrarLog() throws IOException{//llamar cando finalicemos la ejecucion
-        bw.close();
-    }
-    //--------------------------------------------------------------------------------------------------------------------------------
     //METODOS DE SALA DE DESCANSO
     public void descansar(String nombre, int t_min, int t_max) throws IOException{
         if(nombre.charAt(0)=='S'){
@@ -458,11 +456,10 @@ public class EstadoSalas {
    }
    public void tratarReaccion(Sanitario sanitario) throws IOException, InterruptedException{
        /*miramos si hay pacientes en reacion_pacientes; si hay sacamos al primero ,hacemos sleep()  y hacemos signal de esperar_sanitario_reaccion .Si no, nada*/
-       Paciente paciente;
        if(!reaccion_pacientes.isEmpty()){
            c_reacciones.lock();
            try {                   
-                   paciente = reaccion_pacientes.get(0);                   
+                   Paciente paciente = reaccion_pacientes.get(0);                   
                    ImprimirPuestoObsEntrada(paciente.getPuesto_observacion(), sanitario.getNombre(), false);
                    String mensaje = "El sanitario "+sanitario.getNombre()+" trata al paciente "+paciente.getNombre()+" al que le había dado reacción en el puesto "+(paciente.getPuesto_observacion()+1);
                    System.out.println(mensaje);

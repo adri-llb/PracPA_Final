@@ -32,10 +32,7 @@ public class Main {
           
         Hospital h1 = new Hospital(poolPacientes,cap_sala_vacunacion,cap_sala_observacion,num_pacientes);
         h1.start();
-        while(true){
-            
-        }
-        
+
         
         
         

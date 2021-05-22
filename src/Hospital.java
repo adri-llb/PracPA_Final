@@ -33,6 +33,7 @@ public class Hospital extends Thread{
         this.estado_salas = new EstadoSalas(num_pacientes,cap_sala_vacunacion,cap_sala_observacion,interfaz);
         this.t_min_llegada_pacientes= 1*1000;
         this.t_max_llegada_pacientes= 3*1000; 
+        this.num_pacientes = num_pacientes;
         
        
     }

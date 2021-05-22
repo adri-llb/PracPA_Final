@@ -330,18 +330,24 @@ public class SalasJFrame extends javax.swing.JFrame {
 
         jLabelSDescanso.setText("SALA DE DESCANSO");
 
+        jTextFieldDESCANSO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldDESCANSOActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelDESCANSOLayout = new javax.swing.GroupLayout(jPanelDESCANSO);
         jPanelDESCANSO.setLayout(jPanelDESCANSOLayout);
         jPanelDESCANSOLayout.setHorizontalGroup(
             jPanelDESCANSOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelDESCANSOLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelSDescanso)
-                .addGap(62, 62, 62))
-            .addGroup(jPanelDESCANSOLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jTextFieldDESCANSO, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanelDESCANSOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldDESCANSO)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelDESCANSOLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabelSDescanso)))
+                .addContainerGap())
         );
         jPanelDESCANSOLayout.setVerticalGroup(
             jPanelDESCANSOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -704,7 +710,7 @@ public class SalasJFrame extends javax.swing.JFrame {
                         .addComponent(jTextFieldPO19, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextFieldPO20, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanelPuestosV1Layout.setVerticalGroup(
             jPanelPuestosV1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -791,9 +797,9 @@ public class SalasJFrame extends javax.swing.JFrame {
                         .addComponent(jPanelVACUNACION, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanelRECEPCION, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanelDESCANSO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanelRECEPCION, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanelDESCANSO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(19, 19, 19))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jPanelVACUNACION1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -867,6 +873,10 @@ public class SalasJFrame extends javax.swing.JFrame {
     private void jTextFieldPO20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPO20ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldPO20ActionPerformed
+
+    private void jTextFieldDESCANSOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDESCANSOActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldDESCANSOActionPerformed
 
     /**
      * @param args the command line arguments

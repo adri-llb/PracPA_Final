@@ -280,19 +280,13 @@ public class EstadoSalas {
     
     public void cambiarse(String nombre, int t_min, int t_max) throws IOException{
        descanso.add(nombre);
-       imprimirSalaDescanso(interfaz.getjTextFieldDESCANSO(), descanso);
        String mensaje = "El empleado "+nombre+" entra en la sala de descanso para cambiarse.";
        System.out.println(mensaje);
        this.escribirLog(mensaje);
        try{
-           //Thread.sleep(5000);
-           System.out.println("MIN: "+t_min+" MAX: "+t_max);
-           int tiempo = t_min +(int)(Math.random()*(t_max-t_min));
-           System.out.println(tiempo);
-           Thread.sleep(tiempo);
+           Thread.sleep(t_min +(int)(Math.random()*(t_max-t_min)));
        }catch(InterruptedException ie){}
        descanso.remove(nombre);
-       imprimirSalaDescanso(interfaz.getjTextFieldDESCANSO(), descanso);
        mensaje = "El empleado "+nombre+" sale de la sala de descanso, ha terminado de cambiarse.";
        System.out.println(mensaje);
        this.escribirLog(mensaje);

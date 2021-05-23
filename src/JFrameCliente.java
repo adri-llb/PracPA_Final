@@ -21,13 +21,12 @@ import javax.swing.JTextField;
  * 
  */
 public class JFrameCliente extends javax.swing.JFrame {
-    //private EstadoSalas estado_salas;
+    private int puesto = 0;
+    private Boolean cerrado = false;
     /**
      * Creates new form SalasJFrame
      */
    
-        
-  
     private static InterfaceComunica obj;
     public static void main(String args[])
     
@@ -50,7 +49,7 @@ public class JFrameCliente extends javax.swing.JFrame {
             int cont = 0;
             boolean descansado;
             while(true)
-            obj.actualizarFrame(false,0);
+            obj.actualizarFrame();
                 
             
             
@@ -72,9 +71,7 @@ public class JFrameCliente extends javax.swing.JFrame {
         }
 
     }
-    public void botonPulsado(int puesto) throws RemoteException{
-        obj.cerrarPuesto(puesto);
-    }
+
     
     
     public JFrameCliente() {
@@ -223,6 +220,18 @@ public class JFrameCliente extends javax.swing.JFrame {
 
     public JTextField getjTextFieldVacunasDisp() {
         return jTextFieldVacunasDisp;
+    }
+
+    public int getPuesto() {
+        return puesto;
+    }
+
+    public Boolean getCerrado() {
+        return cerrado;
+    }
+
+    public void setCerrado(Boolean cerrado) {
+        this.cerrado = cerrado;
     }
     
 
@@ -1006,7 +1015,10 @@ public class JFrameCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldPO20ActionPerformed
 
     private void JBCerrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCerrar1ActionPerformed
-      
+            System.out.println("ESTOY ");
+            cerrado = true;
+            puesto = 0;
+            
     }//GEN-LAST:event_JBCerrar1ActionPerformed
 
     private void JBCerrar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCerrar9ActionPerformed

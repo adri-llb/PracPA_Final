@@ -28,8 +28,7 @@ public class Comunicador  extends UnicastRemoteObject implements InterfaceComuni
     public void visualizar ()throws RemoteException{
         interfaz_cliente.setVisible(true);
     }
-    public void actualizarFrame(boolean cerrado, int puesto) throws RemoteException{
-        
+    public void actualizarFrame() throws RemoteException{            
              //SALA RECEPCION
             interfaz_cliente.getjTextAreaColaEspera().setText(interfaz_servidor.getjTextAreaColaEspera().getText());
             interfaz_cliente.getjTextFieldPacienteRecepcion().setText(interfaz_servidor.getjTextFieldPacienteRecepcion().getText());
@@ -74,7 +73,10 @@ public class Comunicador  extends UnicastRemoteObject implements InterfaceComuni
             interfaz_cliente.getjTextFieldPO18().setText(interfaz_servidor.getjTextFieldPO18().getText());
             interfaz_cliente.getjTextFieldPO19().setText(interfaz_servidor.getjTextFieldPO19().getText());
             interfaz_cliente.getjTextFieldPO20().setText(interfaz_servidor.getjTextFieldPO20().getText());
-            if(cerrado) cerrarPuesto(puesto);
+            if(interfaz_cliente.getCerrado()) {
+                cerrarPuesto(interfaz_cliente.getPuesto());
+                interfaz_cliente.setCerrado(false);
+            }
             
             
             

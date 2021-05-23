@@ -11,6 +11,6 @@ import java.rmi.RemoteException;
  */
 public interface InterfaceComunica extends Remote{
     void visualizar ()throws RemoteException;
-    void actualizarFrame(boolean cerrado, int puesto) throws RemoteException;
+    void actualizarFrame() throws RemoteException;
     boolean cerrarPuesto(int puesto) throws RemoteException;
 }

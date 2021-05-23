@@ -1,0 +1,132 @@
+2:27:19 -> El empleado S08 entra en la sala de descanso para cambiarse.
+2:27:19 -> El empleado S06 entra en la sala de descanso para cambiarse.
+2:27:19 -> El empleado S10 entra en la sala de descanso para cambiarse.
+2:27:19 -> El empleado S09 entra en la sala de descanso para cambiarse.
+2:27:19 -> El empleado S02 entra en la sala de descanso para cambiarse.
+2:27:19 -> El empleado S03 entra en la sala de descanso para cambiarse.
+2:27:19 -> El empleado S05 entra en la sala de descanso para cambiarse.
+2:27:19 -> El empleado S04 entra en la sala de descanso para cambiarse.
+2:27:19 -> El empleado S07 entra en la sala de descanso para cambiarse.
+2:27:19 -> El empleado S01 entra en la sala de descanso para cambiarse.
+2:27:20 -> A2 prepara vacuna. Lleva 1 preparadas.
+2:27:20 -> A2 prepara vacuna. Lleva 2 preparadas.
+2:27:20 -> El empleado S06 sale de la sala de descanso, ha terminado de cambiarse.
+2:27:20 -> El sanitario S06 entra en puesto de vacunacion 1
+2:27:20 -> El empleado S04 sale de la sala de descanso, ha terminado de cambiarse.
+2:27:20 -> El sanitario S04 entra en puesto de vacunacion 2
+2:27:20 -> El empleado S09 sale de la sala de descanso, ha terminado de cambiarse.
+2:27:20 -> El sanitario S09 entra en puesto de vacunacion 3
+2:27:21 -> El empleado S07 sale de la sala de descanso, ha terminado de cambiarse.
+2:27:21 -> El sanitario S07 entra en puesto de vacunacion 4
+2:27:21 -> El empleado S10 sale de la sala de descanso, ha terminado de cambiarse.
+2:27:21 -> El sanitario S10 entra en puesto de vacunacion 5
+2:27:21 -> El empleado S08 sale de la sala de descanso, ha terminado de cambiarse.
+2:27:21 -> El sanitario S08 entra en puesto de vacunacion 6
+2:27:21 -> El empleado S05 sale de la sala de descanso, ha terminado de cambiarse.
+2:27:21 -> El sanitario S05 entra en puesto de vacunacion 7
+2:27:21 -> El empleado S02 sale de la sala de descanso, ha terminado de cambiarse.
+2:27:21 -> El sanitario S02 entra en puesto de vacunacion 8
+2:27:21 -> A2 prepara vacuna. Lleva 3 preparadas.
+2:27:22 -> El empleado S03 sale de la sala de descanso, ha terminado de cambiarse.
+2:27:22 -> El sanitario S03 entra en puesto de vacunacion 9
+2:27:22 -> El paciente P0000 entra en recepción.
+2:27:22 -> A2 prepara vacuna. Lleva 4 preparadas.
+2:27:22 -> El empleado S01 sale de la sala de descanso, ha terminado de cambiarse.
+2:27:22 -> El sanitario S01 entra en puesto de vacunacion 10
+2:27:22 -> El paciente P0000 tiene cita. 
+2:27:22 -> El paciente P0000 sale de la recepción.
+2:27:22 -> El paciente P0000 entra en puesto de vacunacion 5
+2:27:22 -> A2 prepara vacuna. Lleva 5 preparadas.
+2:27:23 -> A2 prepara vacuna. Lleva 6 preparadas.
+2:27:24 -> A2 prepara vacuna. Lleva 7 preparadas.
+2:27:24 -> El paciente P0001 entra en recepción.
+2:27:24 -> A2 prepara vacuna. Lleva 8 preparadas.
+2:27:25 -> El paciente P0001 tiene cita. 
+2:27:25 -> El paciente P0001 sale de la recepción.
+2:27:25 -> El paciente P0001 entra en puesto de vacunacion 8
+2:27:25 -> A2 prepara vacuna. Lleva 9 preparadas.
+2:27:25 -> Paciente P0000 vacunado en el puesto 5 por el sanitario S10(lleva 1 pacientes vacunados)
+2:27:25 -> El paciente P0000 sale del puesto de vacunacion 5
+2:27:25 -> El paciente P0000 entra en la sala de observacion (puesto 16)
+2:27:26 -> A2 prepara vacuna. Lleva 10 preparadas.
+2:27:27 -> A2 prepara vacuna. Lleva 11 preparadas.
+2:27:27 -> El paciente P0002 entra en recepción.
+2:27:28 -> A2 prepara vacuna. Lleva 12 preparadas.
+2:27:28 -> El paciente P0002 tiene cita. 
+2:27:28 -> El paciente P0002 sale de la recepción.
+2:27:28 -> El paciente P0002 entra en puesto de vacunacion 6
+2:27:28 -> Paciente P0001 vacunado en el puesto 8 por el sanitario S02(lleva 1 pacientes vacunados)
+2:27:28 -> El paciente P0001 sale del puesto de vacunacion 8
+2:27:28 -> El paciente P0001 entra en la sala de observacion (puesto 17)
+2:27:28 -> A2 prepara vacuna. Lleva 13 preparadas.
+2:27:29 -> El paciente P0003 entra en recepción.
+2:27:29 -> A2 prepara vacuna. Lleva 14 preparadas.
+2:27:30 -> El paciente P0003 tiene cita. 
+2:27:30 -> El paciente P0003 sale de la recepción.
+2:27:30 -> El paciente P0003 entra en puesto de vacunacion 3
+2:27:30 -> A2 prepara vacuna. Lleva 15 preparadas.
+2:27:31 -> A2 prepara vacuna. Lleva 16 preparadas.
+2:27:31 -> El paciente P0004 entra en recepción.
+2:27:31 -> A2 prepara vacuna. Lleva 17 preparadas.
+2:27:32 -> Paciente P0002 vacunado en el puesto 6 por el sanitario S08(lleva 1 pacientes vacunados)
+2:27:32 -> El paciente P0002 sale del puesto de vacunacion 6
+2:27:32 -> El paciente P0002 entra en la sala de observacion (puesto 13)
+2:27:32 -> El paciente P0004 tiene cita. 
+2:27:32 -> El paciente P0004 sale de la recepción.
+2:27:32 -> El paciente P0004 entra en puesto de vacunacion 7
+2:27:32 -> A2 prepara vacuna. Lleva 18 preparadas.
+2:27:33 -> A2 prepara vacuna. Lleva 19 preparadas.
+2:27:33 -> El paciente P0005 entra en recepción.
+2:27:33 -> A2 prepara vacuna. Lleva 20 preparadas.
+2:27:33 -> El empleado A2 entra en la sala de descanso.
+2:27:33 -> El paciente P0005 tiene cita. 
+2:27:33 -> El paciente P0005 sale de la recepción.
+2:27:33 -> El paciente P0005 entra en puesto de vacunacion 8
+2:27:34 -> El paciente P0006 entra en recepción.
+2:27:34 -> Paciente P0003 vacunado en el puesto 3 por el sanitario S09(lleva 1 pacientes vacunados)
+2:27:34 -> El paciente P0003 sale del puesto de vacunacion 3
+2:27:34 -> El paciente P0003 entra en la sala de observacion (puesto 7)
+2:27:34 -> El paciente P0006 tiene cita. 
+2:27:34 -> El paciente P0006 sale de la recepción.
+2:27:34 -> El paciente P0006 entra en puesto de vacunacion 2
+2:27:35 -> El empleado A2 sale de la sala de descanso.
+2:27:35 -> Paciente P0004 vacunado en el puesto 7 por el sanitario S05(lleva 1 pacientes vacunados)
+2:27:35 -> El paciente P0004 sale del puesto de vacunacion 7
+2:27:35 -> El paciente P0004 entra en la sala de observacion (puesto 8)
+2:27:35 -> El paciente P0000 sale de la sala de observación (puesto 16) y se va del hospital.
+2:27:35 -> A2 prepara vacuna. Lleva 21 preparadas.
+2:27:35 -> El paciente P0007 entra en recepción.
+2:27:36 -> El paciente P0007 tiene cita. 
+2:27:36 -> El paciente P0007 sale de la recepción.
+2:27:36 -> El paciente P0007 entra en puesto de vacunacion 3
+2:27:36 -> A2 prepara vacuna. Lleva 22 preparadas.
+2:27:37 -> Paciente P0005 vacunado en el puesto 8 por el sanitario S02(lleva 2 pacientes vacunados)
+2:27:37 -> El paciente P0005 sale del puesto de vacunacion 8
+2:27:37 -> El paciente P0005 entra en la sala de observacion (puesto 14)
+2:27:37 -> A2 prepara vacuna. Lleva 23 preparadas.
+2:27:37 -> El paciente P0008 entra en recepción.
+2:27:37 -> Paciente P0006 vacunado en el puesto 2 por el sanitario S04(lleva 1 pacientes vacunados)
+2:27:37 -> El paciente P0006 sale del puesto de vacunacion 2
+2:27:37 -> El paciente P0006 entra en la sala de observacion (puesto 3)
+2:27:38 -> El paciente P0008 tiene cita. 
+2:27:38 -> El paciente P0008 sale de la recepción.
+2:27:38 -> El paciente P0008 entra en puesto de vacunacion 4
+2:27:38 -> A2 prepara vacuna. Lleva 24 preparadas.
+2:27:38 -> El paciente P0001 sale de la sala de observación (puesto 17) y se va del hospital.
+2:27:39 -> A2 prepara vacuna. Lleva 25 preparadas.
+2:27:39 -> Paciente P0007 vacunado en el puesto 3 por el sanitario S09(lleva 2 pacientes vacunados)
+2:27:39 -> El paciente P0007 sale del puesto de vacunacion 3
+2:27:39 -> El paciente P0007 entra en la sala de observacion (puesto 12)
+2:27:39 -> A2 prepara vacuna. Lleva 26 preparadas.
+2:27:40 -> El paciente P0009 entra en recepción.
+2:27:40 -> A2 prepara vacuna. Lleva 27 preparadas.
+2:27:40 -> El paciente P0009 tiene cita. 
+2:27:40 -> El paciente P0009 sale de la recepción.
+2:27:40 -> El paciente P0009 entra en puesto de vacunacion 1
+2:27:41 -> Paciente P0005 vacunado en el puesto 8 por el sanitario S02(lleva 3 pacientes vacunados)
+2:27:41 -> El empleado A1 entra en la sala de descanso.
+2:27:41 -> A2 prepara vacuna. Lleva 28 preparadas.
+2:27:42 -> A2 prepara vacuna. Lleva 29 preparadas.
+2:27:42 -> El paciente P0002 sale de la sala de observación (puesto 13) y se va del hospital.
+2:27:42 -> El paciente P0010 entra en recepción.
+2:27:42 -> A2 prepara vacuna. Lleva 30 preparadas.

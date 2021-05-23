@@ -19,18 +19,16 @@ import java.util.concurrent.TimeUnit;
 public class Hospital extends Thread{
     private ExecutorService poolPacientes;
     private EstadoSalas estado_salas;
-    private int cap_sala_vacunacion;
-    private int cap_sala_observacion;
     private int num_pacientes;
     private int t_min_llegada_pacientes, t_max_llegada_pacientes;
-    private SalasJFrame interfaz = new SalasJFrame();
+    
         
     
     
     
-    public Hospital(ExecutorService poolPacientes,int cap_sala_vacunacion, int cap_sala_observacion, int num_pacientes) throws IOException{
+    public Hospital(ExecutorService poolPacientes,int num_pacientes,EstadoSalas estado_salas) throws IOException{
         this.poolPacientes = poolPacientes;
-        this.estado_salas = new EstadoSalas(num_pacientes,cap_sala_vacunacion,cap_sala_observacion,interfaz);
+        this.estado_salas = estado_salas;
         this.t_min_llegada_pacientes= 1*1000;
         this.t_max_llegada_pacientes= 3*1000; 
         this.num_pacientes = num_pacientes;
@@ -44,8 +42,7 @@ public class Hospital extends Thread{
     
     
     public void run(){
-        this.interfaz.setVisible(true);
-        this.interfaz.setLocationRelativeTo(null);
+        
         
         //creamos los sanitatios
         for(int i=1;i<11;i++){

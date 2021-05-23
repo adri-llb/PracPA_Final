@@ -26,6 +26,8 @@ public class Sanitario extends Thread{
     private int t_min_problema, t_max_problema;
     private int vacunados_descanso;
     private int vacunados;
+    private int descanso; 
+    private boolean puesto_cerrado;
 
     public Sanitario(String id, EstadoSalas estado_salas) {
         this.id = id;
@@ -40,6 +42,8 @@ public class Sanitario extends Thread{
         this.t_max_problema = 5*1000; 
         this.vacunados_descanso = 15;
         this.vacunados=0;
+        this.puesto_cerrado=false;
+        this.descanso=0;
     }
 
     
@@ -74,6 +78,17 @@ public class Sanitario extends Thread{
     public int getT_max_vacunacion() {
         return t_max_vacunacion;
     }
+
+    public void setPuesto_cerrado(boolean puesto_cerrado) {
+        this.puesto_cerrado = puesto_cerrado;
+    }
+
+    public boolean isPuesto_cerrado() {
+        return puesto_cerrado;
+    }
+    
+    
+    
     
     
     
@@ -86,7 +101,10 @@ public class Sanitario extends Thread{
             while(true){
                 estado_salas.vacunar(puesto);                
                 vacunados++;
-                if(vacunados%vacunados_descanso==0){
+                descanso++;
+                if(descanso==vacunados_descanso|| puesto_cerrado){
+                    puesto_cerrado = false; 
+                    descanso = 0;
                     estado_salas.descansar(this.id,this.t_min_descanso,this.t_max_descanso);
                     estado_salas.tratarReaccion(this);//si hay pacientes con reaccion les tratamos
                     puesto = estado_salas.entrarVacunacionSanitario(this);//volvemos a meter al sanitario en la sala de vacunación

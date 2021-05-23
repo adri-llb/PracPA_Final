@@ -121,6 +121,11 @@ public class EstadoSalas {
     public int getVacunas() {
         return vacunas;
     }
+
+    public Sanitario[] getVacunacion_sanitarios() {
+        return vacunacion_sanitarios;
+    }
+    
         //METODO PARA ESCRIBIR EN EL LOG (log.txt)
     public void escribirLog(String entrada) throws IOException{
         LocalDateTime tiempo = LocalDateTime.now();

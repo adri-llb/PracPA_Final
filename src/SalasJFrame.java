@@ -12,14 +12,22 @@ import javax.swing.JTextField;
  *
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
-public class SalasJFrame extends javax.swing.JFrame {
-
+public class SalasJFrame extends javax.swing.JFrame {    
+    private Boolean guardar;
     /**
      * Creates new form SalasJFrame
      */
     public SalasJFrame() {
-        initComponents();
-        
+        initComponents();        
+        this.guardar = false;
+    }
+
+    public Boolean getGuardar() {
+        return guardar;
+    }
+
+    public void setGuardar(Boolean guardar) {
+        this.guardar = guardar;
     }
    
     public JTextField getjTextFieldAux1() {
@@ -258,6 +266,7 @@ public class SalasJFrame extends javax.swing.JFrame {
         jTextFieldPO18 = new javax.swing.JTextField();
         jTextFieldPO19 = new javax.swing.JTextField();
         jTextFieldPO20 = new javax.swing.JTextField();
+        jButtonGuardar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -786,6 +795,13 @@ public class SalasJFrame extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
+        jButtonGuardar.setText("Guardar Estado");
+        jButtonGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGuardarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -804,6 +820,10 @@ public class SalasJFrame extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jPanelVACUNACION1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonGuardar)
+                .addGap(394, 394, 394))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -816,7 +836,9 @@ public class SalasJFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanelRECEPCION, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanelDESCANSO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonGuardar)
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -878,11 +900,16 @@ public class SalasJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldDESCANSOActionPerformed
 
+    private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
+        guardar = true;
+    }//GEN-LAST:event_jButtonGuardarActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonGuardar;
     private javax.swing.JLabel jLabelAux1;
     private javax.swing.JLabel jLabelAux2;
     private javax.swing.JLabel jLabelColaEspera;

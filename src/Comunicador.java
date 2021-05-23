@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import java.io.IOException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.logging.Level;
@@ -85,7 +86,10 @@ public class Comunicador  extends UnicastRemoteObject implements InterfaceComuni
     
     public boolean cerrarPuesto(int puesto){
         estado_salas.getVacunacion_sanitarios()[puesto].setPuesto_cerrado(true);
-        System.out.println("SANITARIO "+estado_salas.getVacunacion_sanitarios()[puesto].getNombre()+" ESTADO CERRADO "+estado_salas.getVacunacion_sanitarios()[puesto].isPuesto_cerrado());
+        String mensaje =( "El puesto de vacunación "+ puesto+" se limpiará cuando se ponga la próxima vacuna.");
+        System.out.println(mensaje);
+        estado_salas.escribirLog(mensaje);
+        estado_salas.getjTextField_puestos_vacunacion()[puesto].setText(estado_salas.getjTextField_puestos_vacunacion()[puesto].getText()+"-L");
         return estado_salas.getVacunacion_sanitarios()[puesto].isPuesto_cerrado();
     }
     

@@ -531,26 +531,41 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="C"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBCerrar6ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="JBCerrar7">
               <Properties>
                 <Property name="text" type="java.lang.String" value="C"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBCerrar7ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="JBCerrar2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="C"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBCerrar2ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="JBCerrar8">
               <Properties>
                 <Property name="text" type="java.lang.String" value="C"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBCerrar8ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="JBCerrar3">
               <Properties>
                 <Property name="text" type="java.lang.String" value="C"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBCerrar3ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="JBCerrar9">
               <Properties>
@@ -564,16 +579,25 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="C"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBCerrar4ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="JBCerrar10">
               <Properties>
                 <Property name="text" type="java.lang.String" value="C"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBCerrar10ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="JBCerrar5">
               <Properties>
                 <Property name="text" type="java.lang.String" value="C"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBCerrar5ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

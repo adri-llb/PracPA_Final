@@ -112,6 +112,10 @@ public class EstadoSalas {
     public ArrayList<Paciente> getRecepcion() {
         return recepcion;
     }
+
+    public JTextField[] getjTextField_puestos_vacunacion() {
+        return jTextField_puestos_vacunacion;
+    }
     
     
     public SalasJFrame getInterfaz() {
@@ -127,11 +131,18 @@ public class EstadoSalas {
     }
     
         //METODO PARA ESCRIBIR EN EL LOG (log.txt)
-    public void escribirLog(String entrada) throws IOException{
+    public void escribirLog(String entrada){
         LocalDateTime tiempo = LocalDateTime.now();
-        bw.write(tiempo.getHour() + ":"+ tiempo.getMinute() +":"+tiempo.getSecond() + " -> "+entrada+"\n"); 
+        try { 
+            bw.write(tiempo.getHour() + ":"+ tiempo.getMinute() +":"+tiempo.getSecond() + " -> "+entrada+"\n");
+        } catch (IOException ex) {
+        }
     }
     public void cerrarLog() throws IOException{//llamar cando finalicemos la ejecucion
+        String mensaje = "Log Cerrado.";
+        escribirLog(mensaje);
+        System.out.println(mensaje);
+        interfaz.setGuardar(false);
         bw.close();
     }
     //--------------------------------------------------------------------------------------------------------------------------------
@@ -185,7 +196,7 @@ public class EstadoSalas {
     
     //-------------------------------------------------------------------------------------------------------------------------
     //METODOS RECEPCION--------------------------------------------------------------------------------------------------------
-    public void entrarRecepcion(Paciente paciente) throws IOException{
+    public void entrarRecepcion(Paciente paciente){
         c_recepcion.lock();
         while(recepcion.size()== num_pacientes){
             try{
@@ -303,9 +314,9 @@ public class EstadoSalas {
    //METODOS SALA VACUNACION
    public int getPuestoLibrePaciente(){//si la sala de vacunacion esta llena devuelve  100, de lo contrario devuelve el puesto de vacunacion
        int puesto = 100;
-      int random = (int)(Math.random()*8);
+       int random = (int)(Math.random()*10);
        for (int i = random; i < vacunacion_pacientes.length+random; i++) {
-               int num = i%9;
+               int num = i%10;
                 if(vacunacion_pacientes[num] == null && vacunacion_sanitarios[num] != null){
                 puesto = num;
                 break;

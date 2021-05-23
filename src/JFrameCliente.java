@@ -480,14 +480,39 @@ public class JFrameCliente extends javax.swing.JFrame {
         });
 
         JBCerrar6.setText("C");
+        JBCerrar6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBCerrar6ActionPerformed(evt);
+            }
+        });
 
         JBCerrar7.setText("C");
+        JBCerrar7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBCerrar7ActionPerformed(evt);
+            }
+        });
 
         JBCerrar2.setText("C");
+        JBCerrar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBCerrar2ActionPerformed(evt);
+            }
+        });
 
         JBCerrar8.setText("C");
+        JBCerrar8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBCerrar8ActionPerformed(evt);
+            }
+        });
 
         JBCerrar3.setText("C");
+        JBCerrar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBCerrar3ActionPerformed(evt);
+            }
+        });
 
         JBCerrar9.setText("C");
         JBCerrar9.addActionListener(new java.awt.event.ActionListener() {
@@ -497,10 +522,25 @@ public class JFrameCliente extends javax.swing.JFrame {
         });
 
         JBCerrar4.setText("C");
+        JBCerrar4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBCerrar4ActionPerformed(evt);
+            }
+        });
 
         JBCerrar10.setText("C");
+        JBCerrar10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBCerrar10ActionPerformed(evt);
+            }
+        });
 
         JBCerrar5.setText("C");
+        JBCerrar5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBCerrar5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelPuestosVLayout = new javax.swing.GroupLayout(jPanelPuestosV);
         jPanelPuestosV.setLayout(jPanelPuestosVLayout);
@@ -1015,15 +1055,55 @@ public class JFrameCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldPO20ActionPerformed
 
     private void JBCerrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCerrar1ActionPerformed
-            System.out.println("ESTOY ");
-            cerrado = true;
-            puesto = 0;
+        cerrado = true;
+        puesto = 0;  
             
     }//GEN-LAST:event_JBCerrar1ActionPerformed
 
     private void JBCerrar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCerrar9ActionPerformed
-        // TODO add your handling code here:
+        cerrado = true;
+        puesto = 8;
     }//GEN-LAST:event_JBCerrar9ActionPerformed
+
+    private void JBCerrar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCerrar2ActionPerformed
+        cerrado = true;
+        puesto = 1;
+    }//GEN-LAST:event_JBCerrar2ActionPerformed
+
+    private void JBCerrar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCerrar3ActionPerformed
+       cerrado = true;
+        puesto = 2;
+    }//GEN-LAST:event_JBCerrar3ActionPerformed
+
+    private void JBCerrar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCerrar4ActionPerformed
+        cerrado = true;
+        puesto = 3;
+    }//GEN-LAST:event_JBCerrar4ActionPerformed
+
+    private void JBCerrar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCerrar5ActionPerformed
+        cerrado = true;
+        puesto = 4;
+    }//GEN-LAST:event_JBCerrar5ActionPerformed
+
+    private void JBCerrar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCerrar6ActionPerformed
+        cerrado = true;
+        puesto = 5;
+    }//GEN-LAST:event_JBCerrar6ActionPerformed
+
+    private void JBCerrar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCerrar7ActionPerformed
+        cerrado = true;
+        puesto = 6;
+    }//GEN-LAST:event_JBCerrar7ActionPerformed
+
+    private void JBCerrar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCerrar8ActionPerformed
+        cerrado = true;
+        puesto = 7;
+    }//GEN-LAST:event_JBCerrar8ActionPerformed
+
+    private void JBCerrar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCerrar10ActionPerformed
+       cerrado = true;
+        puesto = 9;
+    }//GEN-LAST:event_JBCerrar10ActionPerformed
 
     /**
      * @param args the command line arguments

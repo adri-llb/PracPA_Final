@@ -5,6 +5,8 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -65,6 +67,11 @@ public class Hospital extends Thread{
                 Thread.sleep(t_min_llegada_pacientes+(int)(Math.random()*(t_max_llegada_pacientes-t_min_llegada_pacientes)));//creamos pacientes en intervalo 1-3 segundos
             }catch(InterruptedException ie){}
             String id_p;
+            if(estado_salas.getInterfaz().getGuardar()) try {
+                estado_salas.cerrarLog();
+            } catch (IOException ex) {
+                Logger.getLogger(Hospital.class.getName()).log(Level.SEVERE, null, ex);
+            }
             if(i <10) id_p = "P000"+i;
             else if(i < 100) id_p = "P00"+i;
             else if(i<1000) id_p = "P0"+i;

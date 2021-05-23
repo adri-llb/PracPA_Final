@@ -4,6 +4,7 @@ import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -25,10 +26,10 @@ public class Main {
      */
     public static void main(String[] args) throws IOException  {
         // TODO code application logic here
-        int num_pacientes=2000;
+        int num_pacientes=10;
         int cap_sala_vacunacion=10;
         int cap_sala_observacion=20; 
-        ExecutorService poolPacientes = new ThreadPoolExecutor(0,num_pacientes,0,TimeUnit.MINUTES,new LinkedBlockingQueue());
+        ExecutorService poolPacientes = Executors.newCachedThreadPool();
         SalasJFrame interfaz_servidor =new  SalasJFrame();
         EstadoSalas estado_salas= new EstadoSalas (num_pacientes,cap_sala_vacunacion,cap_sala_observacion,interfaz_servidor);
         

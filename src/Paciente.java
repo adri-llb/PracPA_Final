@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  *
  * @author josea
  */
-public class Paciente  extends Thread{
+public class Paciente  implements Runnable{
     private String id;
     private int t_espera_observacion;
     private int prob_reaccion;

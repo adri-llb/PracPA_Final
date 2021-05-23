@@ -77,10 +77,7 @@ public class Hospital extends Thread{
             else if(i<1000) id_p = "P0"+i;
             else id_p = "P"+i;
             Paciente paciente = new Paciente(id_p,estado_salas);
-            paciente.start();
-            //poolPacientes.execute(paciente);
-            
-            
+            poolPacientes.execute(paciente);                        
         }
         poolPacientes.shutdown();
         try{

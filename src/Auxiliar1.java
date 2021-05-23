@@ -10,16 +10,14 @@ import java.util.logging.Logger;
  * and open the template in the editor.
  */
 
-/**
- *
- * @author josea
- */
 public class Auxiliar1 extends Thread{
-    private String id;
-    private EstadoSalas estado_salas;
-     private int t_min_check_cita, t_max_check_cita;
-    private int t_min_descanso, t_max_descanso;
-    private int registros_descanso;
+    private final String id;
+    private final EstadoSalas estado_salas;
+     private final int t_min_check_cita;
+     private final int t_max_check_cita;
+    private final int t_min_descanso;
+    private final int t_max_descanso;
+    private final int registros_descanso;
 
     public Auxiliar1(String id, EstadoSalas estado_salas) {
         this.id = id;
@@ -35,7 +33,6 @@ public class Auxiliar1 extends Thread{
     
     public void run(){
         int cont = 0;
-        //while true apartir de aqui
         while(true){
         //vamos cogiendo pacientes hasta encontrar uno que este citado
         try{
@@ -47,8 +44,7 @@ public class Auxiliar1 extends Thread{
                 estado_salas.getInterfaz().getjTextFieldAux1().setText("");
                 estado_salas.descansar(this.id,this.t_min_descanso,this.t_max_descanso);                
             }
-            
-            
+   
         }catch (IOException | InterruptedException ex) {
             Logger.getLogger(Auxiliar2.class.getName()).log(Level.SEVERE, null, ex);
         }

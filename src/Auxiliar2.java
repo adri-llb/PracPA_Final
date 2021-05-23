@@ -11,11 +11,13 @@ import java.util.logging.Logger;
 
 
 public class Auxiliar2 extends Thread {
-    private String id;
-    private EstadoSalas estado_salas;
-    private int t_min_descanso, t_max_descanso;
-    private int vacunas_descanso;
-    private int t_min_prep_vacuna, t_max_prep_vacunas;
+    private final String id;
+    private final EstadoSalas estado_salas;
+    private final int t_min_descanso;
+    private final int t_max_descanso;
+    private final int vacunas_descanso;
+    private final int t_min_prep_vacuna;
+    private final int t_max_prep_vacunas;
 
     public Auxiliar2(String id, EstadoSalas estado_salas) {
         this.id = id;
@@ -28,7 +30,6 @@ public class Auxiliar2 extends Thread {
     }
     public void run(){        
         int vacunas_preparadas = 0;
-        //while true   
         while(true){
         try {
             sleep(t_min_prep_vacuna+(int)(Math.random()*(t_max_prep_vacunas-t_min_prep_vacuna)));

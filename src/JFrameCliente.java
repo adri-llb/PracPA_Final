@@ -28,48 +28,21 @@ public class JFrameCliente extends javax.swing.JFrame {
      */
    
     private static InterfaceComunica obj;
-    public static void main(String args[])
-    
-    
-
-    {
-
-
-        try
-
-        {
-
+    public static void main(String args[]) {
+        try{
             BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
-
-            
-
             JFrameCliente.obj = (InterfaceComunica) Naming.lookup("//localhost/ObjetoSaludann"); //Localiza el objeto distribuido
-            
+            System.out.println("CLIENTE INICIADO");
             obj.visualizar();
             int cont = 0;
             boolean descansado;
             while(true)
             obj.actualizarFrame();
-                
-            
-            
-            
-
-            //sleep(5000);//Para que dé tiempo a leer la respuesta antes de que se cierre la ventana
-            
-
-        }
-
-        catch (Exception e)
-
+        }catch (Exception e)
         {
-
             System.out.println("Excepción : " + e.getMessage());
-
             e.printStackTrace();
-
         }
-
     }
 
     
@@ -1056,8 +1029,7 @@ public class JFrameCliente extends javax.swing.JFrame {
 
     private void JBCerrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCerrar1ActionPerformed
         cerrado = true;
-        puesto = 0;  
-            
+        puesto = 0;              
     }//GEN-LAST:event_JBCerrar1ActionPerformed
 
     private void JBCerrar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCerrar9ActionPerformed

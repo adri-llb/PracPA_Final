@@ -12,19 +12,19 @@ import java.util.logging.Logger;
  * and open the template in the editor.
  */
 
-/**
- *
- * @author josea
- */
 public class Sanitario extends Thread{
-    private String id;
-    private EstadoSalas estado_salas;
+    private final String id;
+    private final EstadoSalas estado_salas;
     //Variables para tiempos aleatorios
-    private int t_min_cambiarse, t_max_cambiarse;
-    private int t_min_vacunacion, t_max_vacunacion;
-    private int t_min_descanso, t_max_descanso;
-    private int t_min_problema, t_max_problema;
-    private int vacunados_descanso;
+    private final int t_min_cambiarse;
+    private final int t_max_cambiarse;
+    private final int t_min_vacunacion;
+    private final int t_max_vacunacion;
+    private final int t_min_descanso;
+    private final int t_max_descanso;
+    private final int t_min_problema;
+    private final int t_max_problema;
+    private final int vacunados_descanso;
     private int vacunados;
     private int descanso; 
     private boolean puesto_cerrado;
@@ -86,16 +86,10 @@ public class Sanitario extends Thread{
     public boolean isPuesto_cerrado() {
         return puesto_cerrado;
     }
-    
-    
-    
-    
-    
-    
+
     
     public void run(){       
         try {
-            //IMPRESION SANITARIOS CUANDO SE CAMBIAN?
             estado_salas.cambiarse(id, t_min_cambiarse, t_max_cambiarse);
             int puesto = estado_salas.entrarVacunacionSanitario(this);
             while(true){
@@ -109,7 +103,6 @@ public class Sanitario extends Thread{
                     estado_salas.tratarReaccion(this);//si hay pacientes con reaccion les tratamos
                     puesto = estado_salas.entrarVacunacionSanitario(this);//volvemos a meter al sanitario en la sala de vacunación
                 }
-                //Thread.sleep(1000);
             }
             
             

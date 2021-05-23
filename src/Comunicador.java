@@ -3,20 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import java.io.IOException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-/**
- *
- * @author josea
- */
 public class Comunicador  extends UnicastRemoteObject implements InterfaceComunica{
-    private JFrameCliente interfaz_cliente;
-    private SalasJFrame interfaz_servidor;
-    private EstadoSalas estado_salas; 
+    private final JFrameCliente interfaz_cliente;
+    private final SalasJFrame interfaz_servidor;
+    private final EstadoSalas estado_salas; 
     public Comunicador(JFrameCliente interfaz_cliente,SalasJFrame interfaz_servidor, EstadoSalas estado_salas) throws RemoteException {
         this.interfaz_cliente=interfaz_cliente;
         this.interfaz_servidor=interfaz_servidor;
@@ -78,19 +71,18 @@ public class Comunicador  extends UnicastRemoteObject implements InterfaceComuni
                 cerrarPuesto(interfaz_cliente.getPuesto());
                 interfaz_cliente.setCerrado(false);
             }
-            
-            
-            
-        
     }
-    
     public boolean cerrarPuesto(int puesto){
+        Boolean cerrado = false;
+        if(estado_salas.getVacunacion_sanitarios()[puesto] != null){
         estado_salas.getVacunacion_sanitarios()[puesto].setPuesto_cerrado(true);
         String mensaje =( "El puesto de vacunación "+ puesto+" se limpiará cuando se ponga la próxima vacuna.");
         System.out.println(mensaje);
         estado_salas.escribirLog(mensaje);
         estado_salas.getjTextField_puestos_vacunacion()[puesto].setText(estado_salas.getjTextField_puestos_vacunacion()[puesto].getText()+"-L");
-        return estado_salas.getVacunacion_sanitarios()[puesto].isPuesto_cerrado();
+        cerrado = estado_salas.getVacunacion_sanitarios()[puesto].isPuesto_cerrado();
+        }
+        return cerrado;
     }
     
 }

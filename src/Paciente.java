@@ -10,16 +10,12 @@ import java.util.logging.Logger;
  * and open the template in the editor.
  */
 
-/**
- *
- * @author josea
- */
 public class Paciente  implements Runnable{
-    private String id;
-    private int t_espera_observacion;
-    private int prob_reaccion;
-    private int prob_cita;
-    private EstadoSalas estado_salas;
+    private final String id;
+    private final int t_espera_observacion;
+    private final int prob_reaccion;
+    private final int prob_cita;
+    private final EstadoSalas estado_salas;
     private boolean vacunado;
     private boolean comprobado;
     private int puesto;//puesto en la sala de vacunacion
@@ -38,7 +34,6 @@ public class Paciente  implements Runnable{
         this.puesto_observacion=100;
         this.terminar = false;
     }
-    //prueba 
     
     public String getNombre() {
         return id;
@@ -105,16 +100,13 @@ public class Paciente  implements Runnable{
         this.terminar = terminar;
     }
     
-    
-        
 
     public void run() {
         try {
             estado_salas.entrarRecepcion(this);
             estado_salas.salirRecepcion(this);
             if(terminar){
-                this.terminar();
-                //System.out.println("El paciente "+this.id+" sale del hospital.");
+                this.terminar();                
             }
             else{                
                 estado_salas.entrarVacunacionPaciente(this);              

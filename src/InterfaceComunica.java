@@ -5,10 +5,7 @@
  */
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-/**
- *
- * @author josea
- */
+
 public interface InterfaceComunica extends Remote{
     void visualizar ()throws RemoteException;
     void actualizarFrame() throws RemoteException;

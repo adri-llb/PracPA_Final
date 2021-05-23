@@ -8,10 +8,6 @@ import javax.swing.JTextField;
  * and open the template in the editor.
  */
 
-/**
- *
- * @author Sammy Guergachi <sguergachi at gmail.com>
- */
 public class SalasJFrame extends javax.swing.JFrame {    
     private Boolean guardar;
     /**

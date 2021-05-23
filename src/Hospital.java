@@ -1,9 +1,6 @@
 
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.Semaphore;
-import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,28 +11,20 @@ import java.util.logging.Logger;
  * and open the template in the editor.
  */
 
-/**
- *
- * @author josea
- */
 public class Hospital extends Thread{
-    private ExecutorService poolPacientes;
-    private EstadoSalas estado_salas;
-    private int num_pacientes;
-    private int t_min_llegada_pacientes, t_max_llegada_pacientes;
+    private final ExecutorService poolPacientes;
+    private final EstadoSalas estado_salas;
+    private final int num_pacientes;
+    private final int t_min_llegada_pacientes;
+    private final int t_max_llegada_pacientes;
     
-        
-    
-    
-    
+         
     public Hospital(ExecutorService poolPacientes,int num_pacientes,EstadoSalas estado_salas) throws IOException{
         this.poolPacientes = poolPacientes;
         this.estado_salas = estado_salas;
         this.t_min_llegada_pacientes= 1*1000;
         this.t_max_llegada_pacientes= 3*1000; 
-        this.num_pacientes = num_pacientes;
-        
-       
+        this.num_pacientes = num_pacientes; 
     }
 
     public EstadoSalas getEstado_salas() {

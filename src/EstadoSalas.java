@@ -1,5 +1,4 @@
 
-import static java.awt.SystemColor.control;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -23,10 +22,6 @@ import javax.swing.JTextField;
  * and open the template in the editor.
  */
 
-/**
- *
- * @author josea
- */
 public class EstadoSalas {
     private ArrayList<Paciente> recepcion = new ArrayList<>();
     private ArrayList<String> descanso = new ArrayList<>();
@@ -191,10 +186,8 @@ public class EstadoSalas {
     public void ImprimirPuestoObsSalida(int puesto){
         jTextField_puestos_observacion[puesto].setText("");
     }
-    
-    
-    
     //-------------------------------------------------------------------------------------------------------------------------
+    
     //METODOS RECEPCION--------------------------------------------------------------------------------------------------------
     public void entrarRecepcion(Paciente paciente){
         c_recepcion.lock();
@@ -248,15 +241,13 @@ public class EstadoSalas {
                     this.escribirLog(mensaje);
 
                 }else{
-                    String mensaje = "El paciente "+paciente.getNombre()+" NO tiene cita.";
+                    String mensaje = "El paciente "+paciente.getNombre()+" NO tiene cita. Sale del hospital";
                     System.out.println(mensaje);
                     this.escribirLog(mensaje);
                     paciente.setTerminar(true);
-                }
-               // index++;
+                }              
                 esperar_comprobacion.signalAll();
             }finally{c_recepcion.unlock();}
-       // }
 
         //ahora vamos a coger un puesto para que el paciente entre en la sala de vacunacion
         c_vac_pacientes.lock();
@@ -273,6 +264,7 @@ public class EstadoSalas {
         
    }
     //----------------------------------------------------------------------------------------------------------------------------------
+    
     //METODOS DE SALA DE DESCANSO
     public void descansar(String nombre, int t_min, int t_max) throws IOException{
         if(nombre.charAt(0)=='S'){
@@ -290,8 +282,7 @@ public class EstadoSalas {
        imprimirSalaDescanso(interfaz.getjTextFieldDESCANSO(), descanso);
        mensaje = "El empleado "+nombre+" sale de la sala de descanso.";
        System.out.println(mensaje);
-       this.escribirLog(mensaje);
-       
+       this.escribirLog(mensaje);       
    }
     
     public void cambiarse(String nombre, int t_min, int t_max) throws IOException{
@@ -310,7 +301,8 @@ public class EstadoSalas {
        this.escribirLog(mensaje);
        
    }
-   //---------------------------------------------------------------------------------------------------------------------------------
+   //--------------------------------------------------------------------------------------------------------------------------------
+    
    //METODOS SALA VACUNACION
    public int getPuestoLibrePaciente(){//si la sala de vacunacion esta llena devuelve  100, de lo contrario devuelve el puesto de vacunacion
        int puesto = 100;
@@ -350,9 +342,7 @@ public class EstadoSalas {
                   interfaz.getjTextFieldVacunasDisp().setText(String.valueOf(vacunas));
                   vacio_vacunas.signal(); //AWAIT cuando un sanitario vaya a vacunar y no haya vacunas ==0(HECHO)
        } finally {c_prepara_vacuna.unlock();}
-       }
-      
-   
+       }      
    
      public int getPuestoLibreSanitario(){//si la sala de vacunacion esta llena devuelve  100, de lo contrario devuelve el puesto de vacunacion
        int puesto = 100;
@@ -440,8 +430,7 @@ public class EstadoSalas {
             paciente.setVacunado(true);
              isVacunado.signal();
        } finally {c_vac_pacientes.unlock();}
-       
-       
+           
        
        //reducimos el numero de vacunas en 1
        c_prepara_vacuna.lock();
@@ -453,6 +442,7 @@ public class EstadoSalas {
 
    } 
    //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+   
    //METODOS PARA LA SALA DE OBSERVACION
    public void siReaccion(Paciente paciente) throws InterruptedException, IOException{
        if(paciente.getProb_reaccion()<porcentaje_reaccion){
@@ -535,10 +525,6 @@ public class EstadoSalas {
        return puesto;
    }
    //----------------------------------------------------------------------------------------------------------------------------------
-
-   
-   //----------------------------------------------------------------------------------------------------------------------------------
-   //CUANDO SE TERMINE CERRAR EL TXT PA QUE SE GUARDE
 } 
    
     
